@@ -1,0 +1,11 @@
+/.unused
+/dest
+/releases
+/appimage/*
+/.vscode
+
+mode-intro.lua
+mode-play.lua
+mode-pause.lua
+sprites.lua
+wrap.lua
