@@ -1,11 +1,11 @@
 (local repl (require "lib.stdio"))
+
 (local canvas (let [(w h) (love.window.getMode)]
                 (love.graphics.newCanvas w h)))
 
 (var scale 1)
 
-;; set the first mode
-(var mode (require "mode-intro"))
+(var mode (require "mode-dummy"))
 
 (fn set-mode [mode-name ...]
   (set mode (require mode-name))
@@ -17,8 +17,6 @@
   (repl.start))
 
 (fn love.draw []
-  ;; the canvas allows you to get sharp pixel-art style scaling; if you
-  ;; don't want that, just skip that and call mode.draw directly.
   (love.graphics.setCanvas canvas)
   (love.graphics.clear)
   (love.graphics.setColor 1 1 1)
@@ -33,5 +31,5 @@
 (fn love.keypressed [key]
   (if (and (love.keyboard.isDown "lctrl" "rctrl" "capslock") (= key "q"))
       (love.event.quit)
-      ;; add what each keypress should do in each mode
       (mode.keypressed key set-mode)))
+

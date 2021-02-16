@@ -4,8 +4,12 @@
 /appimage/*
 /.vscode
 
+mode-dummy.lua
+mode-gameover.lua
 mode-intro.lua
 mode-play.lua
 mode-pause.lua
+mode-splash.lua
+mode-mainmenu.lua
 sprites.lua
 wrap.lua
