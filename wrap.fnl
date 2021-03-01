@@ -33,3 +33,7 @@
       (love.event.quit)
       (mode.keypressed key set-mode)))
 
+(fn love.mousepressed [x y button istouch presses set-mode]
+  (when mode.mouspressed
+    (mode.mousepressed x y button istouch presses set-mode)))
+
